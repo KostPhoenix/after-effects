@@ -147,24 +147,6 @@ function execute(/*args*/) {
     return platform.execute(command)
         //Handle Results
         .then(() => new Promise((resolve, reject) => {
-            const sub_temp_dir = os.platform() === 'darwin' ? 'TemporaryItems' : '';
-            const jsfile = path.join(os.tmpdir(), sub_temp_dir, command.result_file);
-
-            let search_try = 0;
-            let search_interval = setInterval(function () {
-                if (fs.existsSync(jsfile)) {
-                    clearInterval(search_interval);
-                    resolve()
-                }
-                search_try++;
-                if (search_try > 30) {
-                    clearInterval(search_interval);
-                    reject(new Error('File did not exists and was not created during the timeout.'));
-                }
-            }, 1000);
-
-        }))
-        .then(() => new Promise((resolve, reject) => {
 
             const results = get_results(command);
             if (results == null)
