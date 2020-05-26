@@ -41,7 +41,7 @@ const options = {
         path.join(__dirname, '/lib/includes/console.jsx'),
         path.join(__dirname, '/lib/includes/es5-shim.jsx'),
         path.join(__dirname, '/lib/includes/get.jsx'),
-        path.join(__dirname, '/lib/includes/template_node.jsx')
+        path.join(__dirname, '/lib/includes/template-node.jsx')
     ]
 };
 
